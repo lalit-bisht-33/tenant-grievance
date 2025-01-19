@@ -12,9 +12,17 @@ if ($conn->query($sql) === TRUE) {
     echo "$email"."<br>";
     echo "$mobile"."<br>";
     echo "$password"."<br>";
+
+
+    $_SESSION['start_id']=$id;
+    
+    if (!isset($_SESSION['start_id'])) {
+      echo "Session variable 'start_id' is not set.";
+      exit; // Exit if the session variable is not set
+    }
     echo "User information is signed up!!";
 
-    header("Location : /php");
+    header("Location : /php/pages/home.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }

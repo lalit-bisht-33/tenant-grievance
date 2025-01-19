@@ -13,15 +13,14 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 
 
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['password'] = $user['password'];
+    $_SESSION['start_id'] = $user['id'];
+    $_SESSION['created_time'] = $user['created_at'];
+    $_SESSION['contact'] = $user['mobile'];
 
-    echo "Username is " . $_SESSION['username']."<br>";
-    echo "Password is " . $_SESSION['password'];
+    // echo "setted!!";
     
     
-    header("Location: /php");
-    exit();
+   
 } else {
     // If login fails
     echo "Invalid username, email, or password.";

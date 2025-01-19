@@ -23,15 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include("../database/fetch_login.php");
        
-        
+        header("Location: /php/pages/home.php");
     }
    
 }
-if (isset($_GET['logout'])) {  //use this because we have to logout on buttion click
 
-    header("Location: /php/?signup");
-    session_destroy();
-    exit();
-}
 
 ?>

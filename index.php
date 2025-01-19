@@ -13,13 +13,20 @@
     include("./components/navbar.php");
     // include("./config/db.php");
 
-    if(isset($_GET['signup'])){
+    if(isset($_GET['signup'])&& !isset($_SESSION['username']) && !isset($_SESSION['password'])){
     include("./pages/signup.php");
     }
     
-    if(isset($_GET['login'])){
+    if(isset($_GET['login']) && !isset($_SESSION['username']) && !isset($_SESSION['password'])){
     include("./pages/login.php");
     }
+
+    // if (!isset($_GET['signup']) && !isset($_GET['login'])) {
+    //     echo "hello ji";
+    //     include("./pages/home.php");
+    // } 
+
+
     ?>
 </body>
 </html>
